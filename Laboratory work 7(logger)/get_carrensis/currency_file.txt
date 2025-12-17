@@ -1,0 +1,140 @@
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+ result:{'USD': 79.4302, 'EUR': 93.8054, 'GBP': 106.3888, 'DOL': "Код валюты 'DOL' не найден."}
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: RequestException: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+result:{'USD': 79.4302, 'EUR': 93.8054, 'GBP': 106.3888, 'DOL': "Код валюты 'DOL' не найден."}
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: KeyError: 'Валюта отсутствует в данных'
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+result:{'AUD': 52.7178, 'AZN': 46.7236, 'DZD': 61.3396}
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: ValueError: Некорректный JSON
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: RequestException: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+result:{'AUD': 52.7178, 'AZN': 46.7236, 'DZD': 61.3396}
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: RequestException: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: RequestException: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+result:{'AUD': 52.7178, 'AZN': 46.7236, 'DZD': 61.3396}
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: InvalidURL: Invalid URL 'http://': No host supplied
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: InvalidURL: Invalid URL 'https://': No host supplied
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+result:{'AUD': 52.7178, 'AZN': 46.7236, 'DZD': 61.3396}
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: ConnectionError: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: ConnectionError: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+result:{'AUD': 52.7178, 'AZN': 46.7236, 'DZD': 61.3396}
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: RequestException: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: RequestException: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+result:{'AUD': 52.7178, 'AZN': 46.7236, 'DZD': 61.3396}
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: RequestException: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: KeyError: 'Валюта отсутствует в данных'
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: RequestException: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+функция get_currencies выполнена без исключений
+result:{'AUD': 52.7178, 'AZN': 46.7236, 'DZD': 61.3396}
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: ConnectionError: Упали с исключением
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: KeyError: 'Валюта отсутствует в данных'
+
+Вызов функции get_currencies
+
+Вызов функции get_currencies
+get_currencies совершена с исключением: ConnectionError: Упали с исключением
+

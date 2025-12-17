@@ -1,0 +1,112 @@
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 1x^2 + 2x + 1 = 0
+DEBUG: Discriminant: 0
+INFO: One real root
+INFO: Вызов функции solve_quadratic
+функция solve_quadratic выполнена без исключений
+result:(-1.0,)
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 1x^2 + 1x + 1 = 0
+DEBUG: Discriminant: -3
+WARNING: Discriminant < 0: no real roots
+INFO: Вызов функции solve_quadratic
+функция solve_quadratic выполнена без исключений
+result:None
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 2x^2 + 6x + 9 = 0
+DEBUG: Discriminant: -36
+WARNING: Discriminant < 0: no real roots
+INFO: Вызов функции solve_quadratic
+функция solve_quadratic выполнена без исключений
+result:None
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 2x^2 + 6x + -9 = 0
+DEBUG: Discriminant: 108
+INFO: Two real roots computed
+INFO: Вызов функции solve_quadratic
+функция solve_quadratic выполнена без исключений
+result:(1.098076211353316, -4.098076211353316)
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 2x^2 + 6x + 9 = 0
+DEBUG: Discriminant: -36
+ERROR: Вызов функции solve_quadratic
+solve_quadratic совершена с исключением: WarrningError: Discriminant < 0: no real roots
+
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 2x^2 + 6x + 9 = 0
+DEBUG: Discriminant: -36
+WARNING: Discriminant < 0: no real roots
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 2x^2 + 6x + 9 = 0
+ERROR: Вызов функции solve_quadratic
+solve_quadratic совершена с исключением: TypeError: Coefficient 'a' must be numeric
+
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 0x^2 + 0x + 9 = 0
+ERROR: Вызов функции solve_quadratic
+solve_quadratic совершена с исключением: ValueError: a cannot be zero
+
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 0x^2 + 0x + 9 = 0
+CRITICAL: a cannot be zero, critical situation
+INFO: Вызов функции solve_quadratic
+
+INFO: Solving equation: 1x^2 + 2x + 1 = 0
+DEBUG: Discriminant: 0
+INFO: One real root
+INFO: Вызов функции solve_quadratic
+функция solve_quadratic выполнена без исключений
+result:(-1.0,)
+INFO: Вызов функции Solving equation: 1x^2 + 2x + 1 = 0
+DEBUG: Discriminant: 0
+INFO: One real root
+INFO: Вызов функции Solving equation: 1x^2 + 2x + 1 = 0функция solve_quadratic выполнена без исключений
+result:(-1.0,)
+INFO: Вызов функции Solving equation: 1x^2 + 2x + 1 = 0
+
+DEBUG: Discriminant: 0
+INFO: One real root
+INFO: функция solve_quadratic выполнена без исключений
+result:(-1.0,)
+INFO: Вызов функции Solving equation: 1x^2 + 2x + 1 = 0
+DEBUG: Discriminant: 0
+INFO: One real root
+INFO: функция solve_quadratic выполнена без исключений
+result:(-1.0,)
+INFO: Вызов функции Solving equation: 1x^2 + 2x + 1 = 0
+DEBUG: Discriminant: 0
+INFO: One real root
+INFO: функция solve_quadratic выполнена без исключений
+
+INFO: (-1.0,)
+INFO: Вызов функции Solving equation: 1x^2 + 2x + 1 = 0
+DEBUG: Discriminant: 0
+INFO: One real root
+INFO: функция solve_quadratic выполнена без исключений
+INFO: (-1.0,)
+INFO: Вызов функции Solving equation: 0x^2 + 2x + 1 = 0
+CRITICAL: a cannot be zero, critical situation
+INFO: Вызов функции Solving equation: 1x^2 + 1x + 1 = 0
+DEBUG: Discriminant: -3
+WARNING: Discriminant < 0: no real roots
+INFO: Вызов функции Solving equation: 1x^2 + 1x + 1 = 0
+DEBUG: Discriminant: -3
+WARNING: Discriminant < 0: no real roots
+INFO: Вызов функции Solving equation: 1x^2 + 1x + 1 = 0
+DEBUG: Discriminant: -3
+WARNING: Discriminant < 0: no real roots
+INFO: Вызов функции Solving equation: 1x^2 + 1x + 1 = 0
+DEBUG: Discriminant: -3
+WARNING: Discriminant < 0: no real roots
+INFO: Вызов функции Solving equation: 1x^2 + 1x + 1 = 0
+DEBUG: Discriminant: -3
+WARNING: Discriminant < 0: no real roots
