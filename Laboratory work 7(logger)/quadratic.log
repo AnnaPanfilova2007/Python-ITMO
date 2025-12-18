@@ -110,3 +110,6 @@ WARNING: Discriminant < 0: no real roots
 INFO: Вызов функции Solving equation: 1x^2 + 1x + 1 = 0
 DEBUG: Discriminant: -3
 WARNING: Discriminant < 0: no real roots
+INFO: Вызов функции Solving equation: 1x^2 + 1x + 1 = 0
+DEBUG: Discriminant: -3
+WARNING: Discriminant < 0: no real roots
