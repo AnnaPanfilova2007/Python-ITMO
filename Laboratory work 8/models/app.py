@@ -1,4 +1,4 @@
-from Author import Author
+from models.author import Author
 
 
 class App:

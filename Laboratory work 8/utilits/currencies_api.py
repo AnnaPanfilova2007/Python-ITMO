@@ -53,8 +53,20 @@ def get_currencies(currency_codes: list, url:str = "https://www.cbr-xml-daily.ru
         raise requests.exceptions.ConnectionError('Упали с исключением')
 
 # Пример использования функции:
-currency_list = ['USD', 'EUR']
+currencies = [
+    "USD",  # Доллар США (United States Dollar)
+    "EUR",  # Евро (Euro)
+    "JPY",  # Японская иена (Japanese Yen)
+    "GBP",  # Фунт стерлингов (British Pound)
+    "CHF",  # Швейцарский франк (Swiss Franc)
+    "CAD",  # Канадский доллар (Canadian Dollar)
+    "AUD",  # Австралийский доллар (Australian Dollar)
+    "CNY",  # Китайский юань (Chinese Yuan)
+    "NZD",  # Новозеландский доллар (New Zealand Dollar)
+    "INR"   # Индийская рупия (Indian Rupee)
+]
 
 if __name__ == "__main__":
-    currency_list = get_currencies(currency_list, url="https://www.cbr-xml-daily.ru/daily_json.js")
+    currency_list = get_currencies(currencies, url="https://www.cbr-xml-daily.ru/daily_json.js")
+    print(currency_list["USD"])
     print(currency_list)
