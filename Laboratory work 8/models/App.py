@@ -5,16 +5,7 @@ class App:
         self.__version: str = version
         self.__author: Author = author
 
-    @property
-    def name_app(self):
-        return self.__name_app
 
-    @name_app.setter
-    def name_app(self, name: str):
-        if type(name) is str and len(name) >= 2:
-            self.__name_app = name
-        else:
-            raise ValueError('Ошибка при задании имени автора')
 
     @property
     def version(self):

@@ -2,14 +2,7 @@ import requests
 import sys
 import io
 import logging.handlers
-from decorator import logger
 
-stream = io.StringIO()
-log = logging.getLogger("L1")
-handler = logging.handlers.RotatingFileHandler("currency_file.txt", encoding="UTF-8")
-log.addHandler(handler)
-log.setLevel(1)
-@logger(handle=log)
 def get_currencies(currency_codes: list, url:str = "https://www.cbr-xml-daily.ru/daily_json.js", handle=sys.stdout)->dict:
     """
     Получает курсы валют с API Центробанка России.
@@ -60,7 +53,7 @@ def get_currencies(currency_codes: list, url:str = "https://www.cbr-xml-daily.ru
         raise requests.exceptions.ConnectionError('Упали с исключением')
 
 # Пример использования функции:
-currency_list = ['USD', 'EUR', 'GBP', 'DOL']
+currency_list = ['USD', 'EUR']
 
 if __name__ == "__main__":
     currency_list = get_currencies(currency_list, url="https://www.cbr-xml-daily.ru/daily_json.js")

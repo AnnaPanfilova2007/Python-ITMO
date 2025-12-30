@@ -4,7 +4,7 @@ import concurrent.futures as ftres
 from functools import partial
 from typing import Callable
 import concurrent.futures as futures
-
+from Cython_int import integrate_basic
 import numba
 
 
@@ -144,6 +144,7 @@ def integrate_process(func: Callable, a: float, b: float, *, n_iter: int = 10000
         step = (b - a) / n_jobs
         results = [threadStart(a + i * step, a + (i + 1) * step) for i in range(n_jobs)]
         return round(sum([i.result() for i in futures.as_completed(results)]), 10)
+#Cython
 
 #интеграция 5 через nogil
 def integrate_async_nogil(f: Callable, a:float, b:float, *, n_iter=100000, n_jobs = 3)-> float:
@@ -190,6 +191,4 @@ def quadratic(x):
 
 if __name__ == "__main__":
     doctest.testmod(verbose=True)
-    print(integrate_process(lambda x: x, 0, 1,
-                                   n_iter=5000, n_jobs=1))
-
+    print(integrate_basic(math.sin, -math.pi/2, math.pi/2, n_iter=5000))
