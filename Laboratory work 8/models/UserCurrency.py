@@ -1,40 +1,114 @@
 class UserCurrency:
-    def __init__(self, ):
-        ...
+    """
+    Класс, представляющий связь между пользователем и валютой.
+
+    Используется для хранения информации о том, какие валюты
+    отслеживает или использует конкретный пользователь.
+
+    Атрибуты:
+        __uid (int): Идентификатор пользователя (User ID)
+        __id (int): Идентификатор связи/отношения (неясное назначение)
+        __cid (int): Идентификатор валюты (Currency ID)
+    """
+
+    def __init__(self, uid: int, id: int, current_id: int):
+        """
+        Конструктор класса UserCurrency.
+
+        Args:
+            uid (int): Идентификатор пользователя (>= 0)
+            id (int): Неясный параметр (возможно ID связи) (>= 0)
+            current_id (int): Идентификатор валюты (>= 0)
+
+        """
+        self.__uid: int = uid  # Приватный: ID пользователя
+        self.__id: int = id  # Приватный: Неясный параметр (возможно ID связи)
+        self.__cid: int = current_id  # Приватный: ID валюты
+
+    # -----------------------------------------------------------
+    # Свойства для доступа к атрибутам с валидацией
+    # -----------------------------------------------------------
 
     @property
     def uid(self):
+        """
+        Геттер для получения идентификатора пользователя.
+
+        Returns:
+            int: ID пользователя
+        """
         return self.__uid
+
     @uid.setter
-    def uid(self, uid:str):
-        try:
-            uid = int(uid)
+    def uid(self, uid: int):
+        """
+        Сеттер для установки идентификатора пользователя.
+
+        Args:
+            uid (int): Новый ID пользователя
+
+        Raises:
+            ValueError: Если uid не является int или меньше 0
+
+        """
+        if type(uid) is int and uid >= 0:
             self.__uid = uid
-        except:
-            raise ValueError("Ошибка в User id")
+        else:
+            # ОШИБКА: Сообщение не соответствует параметру
+            # Должно быть: 'Ошибка при задании идентификатора пользователя'
+            raise ValueError('Ошибка при задании номера связи')
 
     @property
     def id(self):
+        """
+        Геттер для получения неясного идентификатора.
+
+        Returns:
+            int: Неясный идентификатор (возможно ID связи)
+
+        """
         return self.__id
 
     @id.setter
-    def id(self, id: str):
-        try:
-            id = int(id)
+    def id(self, id: int):
+        """
+        Сеттер для установки неясного идентификатора.
+
+        Args:
+            id (int): Новое значение неясного идентификатора
+
+        Raises:
+            ValueError: Если id не является int или меньше 0
+        """
+        if type(id) is int and id >= 0:
             self.__id = id
-        except:
-            raise ValueError("Ошибка в id")
+        else:
+            raise ValueError('Ошибка при задании id')
 
     @property
     def current_id(self):
+        """
+        Геттер для получения идентификатора валюты.
+
+        Returns:
+            int: ID валюты
+        """
         return self.__cid
 
     @current_id.setter
-    def current_id(self, cid: str):
-        try:
-            cid = int(cid)
+    def current_id(self, cid: int):
+        """
+        Сеттер для установки идентификатора валюты.
+
+        Args:
+            cid (int): Новый ID валюты
+
+        Raises:
+            ValueError: Если cid не является int или меньше 0
+        """
+        if type(cid) is int and cid >= 0:
             self.__cid = cid
-        except:
-            raise ValueError("Ошибка в cid")
-
-
+        else:
+            # ОШИБКА: В классе User была та же ошибка
+            # Но здесь это более уместно, так как это действительно валюта
+            raise ValueError('Ошибка при задании id валюты')
