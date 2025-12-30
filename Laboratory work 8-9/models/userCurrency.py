@@ -7,22 +7,22 @@ class UserCurrency:
 
     Атрибуты:
         __uid (int): Идентификатор пользователя (User ID)
-        __id (int): Идентификатор связи/отношения (неясное назначение)
+        __id (int): id связи
         __cid (int): Идентификатор валюты (Currency ID)
     """
 
-    def __init__(self, uid: int, id: int, current_id: int):
+    def __init__(self, id: int, uid: int, current_id: int):
         """
         Конструктор класса UserCurrency.
 
         Args:
             uid (int): Идентификатор пользователя (>= 0)
-            id (int): Неясный параметр (возможно ID связи) (>= 0)
+            id (int): возможно ID связи (>= 0)
             current_id (int): Идентификатор валюты (>= 0)
 
         """
         self.__uid: int = uid  # Приватный: ID пользователя
-        self.__id: int = id  # Приватный: Неясный параметр (возможно ID связи)
+        self.__id: int = id  #ID связи
         self.__cid: int = current_id  # Приватный: ID валюты
 
     # -----------------------------------------------------------

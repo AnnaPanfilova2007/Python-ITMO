@@ -176,25 +176,20 @@
                 <h2 class="section-title">Автор</h2>
 
                 <div class="info-item">
-                    <div class="info-label">Автор проекта:</div>
-                    <div class="info-value">{{ author_name }}</div>
+                    <div class="info-label">Название проекта:</div>
+                    <div class="info-value">{{ app_name }}</div>
                 </div>
 
                 <div class="info-item">
-                    <div class="info-label">Группа:</div>
-                    <div class="info-value">{{ group }}</div>
+                    <div class="info-label">Версия:</div>
+                    <div class="info-value">{{ version }}</div>
                 </div>
 
                 <div class="info-item">
                     <div class="info-label">GitHub:</div>
                     <div class="info-value">
-                        {% if navigation and navigation[0]['githab'] %}
-                            <a href="{{ navigation[0]['githab'] }}" class="github-link" target="_blank">
-                                {{ navigation[0]['githab'] }}
-                            </a>
-                        {% else %}
-                            Не указан
-                        {% endif %}
+                        <a href={{git}}> перейти по ссылке</a>
+
                     </div>
                 </div>
             </div>
