@@ -2,8 +2,6 @@ import urllib
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 import models
-from controllers import databasecontroller
-from controllers import CurrencyRatesCRUD
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import parse_qs, urlparse
 from utilits.currencies_api import get_currencies
@@ -100,7 +98,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         elif path == '/users':
             self.handle_users_list(base_data)
         elif path == '/user':
-            # Обработка страницы пользователя
             self.handle_user(base_data, query_params)
         elif path == '/currencies':
             self.handle_currencies_list(base_data)
@@ -144,7 +141,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                     base_data['user'] = user
                     base_data['user_currencies'] = user_currencies
                     base_data['total_subscriptions'] = len(user_currency_ids)
-                    base_data['total_unique_currencies'] = len(set(user_currency_ids))
+                    base_data['total_unique_currencies'] = len(user_currency_ids)
 
                     # Рендеринг страницы пользователя
                     template_user = env.get_template("user_detail.html")
