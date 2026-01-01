@@ -8,19 +8,17 @@ class Author:
 
     """
 
-    def __init__(self, name: str, group: str, git: str):
+    def __init__(self, name: str, group: str):
         """
         Конструктор класса Author.
 
         Args:
             name (str): Имя автора (должно быть строкой длиной >= 2 символов)
             group (str): Группа автора (должна быть строкой длиной > 5 символов)
-            git (str): гитхаб автора (должна быть строкой длиной >= 2 символов)
 
         """
         self.__name: str = name  # Приватный атрибут: имя автора
         self.__group: str = group  # Приватный атрибут: группа автора
-        self.__git: str = git #Приватный атрибут: ссылка на гитхаб
 
     @property
     def name(self):
@@ -37,7 +35,7 @@ class Author:
     @name.setter
     def name(self, name: str):
         """
-        Сеттер для установки имени автора
+        Сеттер для установки имени автора с валидацией.
 
         Args:
             name (str): Новое имя автора
@@ -45,7 +43,12 @@ class Author:
         Raises:
             ValueError: Если имя не является строкой или короче 2 символов
 
+        Проверки:
+            1. Тип данных должен быть str (используется type(name) is str)
+            2. Длина имени должна быть не менее 2 символов
         """
+        # Проверка типа через type() is str (строгая проверка типа)
+        # Альтернатива: isinstance(name, str) - более гибкая проверка
         if type(name) is str and len(name) >= 2:
             self.__name = name
         else:
@@ -72,38 +75,12 @@ class Author:
         Raises:
             ValueError: Если группа не является строкой или короче/равна 5 символам
 
+        Проверки:
+            1. Тип данных должен быть str
+            2. Длина группы должна быть больше 5 символов
 
         """
-        if type(group) is str and len(group) >= 5:
+        if type(group) is str and len(group) > 5:
             self.__group = group
         else:
             raise ValueError('Ошибка при задании группы автора: группа должна быть строкой длиной более 5 символов')
-
-    @property
-    def git(self):
-        """
-        Геттер для получения гитхаба автора.
-
-        Returns:
-            str: получает ссылку
-
-        Позволяет получить значение приватного атрибута __git
-        """
-        return self.__git
-
-    @git.setter
-    def git(self, git: str):
-        """
-        Сеттер для установки ссылки на гит
-
-        Args:
-            git (str): Новая ссылка
-
-        Raises:
-            ValueError: Если гит не является строкой или короче 2 символов
-
-        """
-        if type(git) is str and len(git) >= 2:
-            self.__git = git
-        else:
-            raise ValueError('Ошибка при задании ссылки на гитхаб')

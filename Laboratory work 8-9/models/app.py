@@ -1,4 +1,4 @@
-from models.author import Author
+from Author import Author
 
 
 class App:
@@ -20,41 +20,11 @@ class App:
             version (str): Версия приложения (должна содержать только цифры и точки)
             author (Author): Объект класса Author - автор приложения
 
+        Инициализирует приватные атрибуты приложения.
         """
         self.__name: str = name  # Приватный атрибут: название приложения
         self.__version: str = version  # Приватный атрибут: версия приложения
         self.__author: Author = author  # Приватный атрибут: автор приложения
-
-    @property
-    def name(self):
-        """
-        Геттер для получения названия приложения
-
-        Returns:
-            str: Текущее название приложения
-
-        Позволяет получить значение приватного атрибута __name
-        """
-        return self.__name
-
-    @name.setter
-    def name(self, name: str):
-        """
-        Сеттер для установки названия приложения
-
-        Args:
-            name (str): Новое название приложения
-
-        Raises:
-            ValueError: Если имя не является строкой или короче 2 символов
-
-        """
-        # Проверка типа через type() is str (строгая проверка типа)
-        # Альтернатива: isinstance(name, str) - более гибкая проверка
-        if type(name) is str and len(name) >= 2:
-            self.__name = name
-        else:
-            raise ValueError('Ошибка при задании имени автора: имя должно быть строкой длиной не менее 2 символов')
 
     @property
     def version(self):
@@ -80,6 +50,9 @@ class App:
             ValueError: Если версия содержит недопустимые символы
                 (разрешены только цифры и точки)
 
+        Примеры:
+            Допустимо: "1.0", "2.5.3", "10.0.1.5"
+            Не допустимо: "1.a", "version-2", "3,5"
         """
         # Проверяем, что все символы в строке - цифры или точки
         if all(s.isdigit() or s == "." for s in vers):
@@ -108,6 +81,7 @@ class App:
         Raises:
             TypeError: Если переданный объект не является экземпляром класса Author
 
+        Обеспечивает строгую типизацию - автор должен быть объектом класса Author
         """
         if isinstance(author, Author):
             self.__author = author
