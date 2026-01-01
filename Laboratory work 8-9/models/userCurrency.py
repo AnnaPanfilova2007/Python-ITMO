@@ -11,7 +11,7 @@ class UserCurrency:
         __cid (int): Идентификатор валюты (Currency ID)
     """
 
-    def __init__(self, id: int, uid: int, current_id: int):
+    def __init__(self, uid: int, id: int, current_id: int):
         """
         Конструктор класса UserCurrency.
 
