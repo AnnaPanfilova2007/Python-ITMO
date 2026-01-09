@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя - {{ user.name }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .user-profile {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .user-avatar {
+            text-align: center;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: white;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .user-id {
+            font-size: 1.1rem;
+            color: #666;
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .user-stats {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .stat-label {
+            color: #666;
+        }
+
+        .stat-value {
+            color: #182848;
+            font-weight: 600;
+        }
+
+        .user-info h2 {
+            color: #182848;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #4b6cb7;
+            padding-bottom: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .info-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            color: #182848;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .currencies-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .currencies-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .currencies-header h3 {
+            color: #182848;
+            font-size: 1.5rem;
+        }
+
+        .currencies-stats {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .currencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .currency-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 5px solid #4b6cb7;
+        }
+
+        .currency-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .currency-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .currency-code {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #182848;
+        }
+
+        .currency-name {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .currency-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .detail-item {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .detail-label {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .detail-value {
+            color: #182848;
+            font-weight: 600;
+            margin-top: 3px;
+        }
+
+        .currency-value {
+            color: #2ecc71;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .no-currencies {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+            grid-column: 1 / -1;
+        }
+
+        .navigation {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .nav-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-button:hover {
+            background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .user-profile {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .currencies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .currencies-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .nav-button {
+                display: block;
+                margin: 10px auto;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Профиль пользователя</h1>
+            <p>Детальная информация и отслеживаемые валюты</p>
+        </div>
+
+        <div class="content">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <div class="avatar">
+                        {{ user.name[0] if user.name else '?' }}
+                    </div>
+                    <div class="user-id">ID: {{ user.id }}</div>
+
+                    <div class="user-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Подписок на валюты:</span>
+                            <span class="stat-value">{{ total_subscriptions }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-info">
+                    <h2>{{ user.name }}</h2>
+
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">ID пользователя</div>
+                            <div class="info-value">{{ user.id }}</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">Имя и фамилия</div>
+                            <div class="info-value">{{ user.name }}</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">Электронная почта</div>
+                            <div class="info-value">
+                                <a href="mailto:{{ user.mail }}" style="color: #4b6cb7; text-decoration: none;">
+                                    {{ user.mail }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="currencies-section">
+                <div class="currencies-header">
+                    <h3>Отслеживаемые валюты</h3>
+                    <div class="currencies-stats">
+                        Всего подписок: {{ total_subscriptions }}
+                    </div>
+                </div>
+
+                {% if user_currencies %}
+                <div class="currencies-grid">
+                    {% for currency in user_currencies %}
+                    <div class="currency-card">
+                        <div class="currency-header">
+                            <div class="currency-code">{{ currency.chc }}</div>
+                        </div>
+
+                        <div class="currency-name">{{ currency.name_v }}</div>
+
+                        <div class="currency-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Цифровой код</div>
+                                <div class="detail-value">{{ currency.numc }}</div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-label">Номинал</div>
+                                <div class="detail-value">{{ currency.nominal }} ед.</div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-label">ID валюты</div>
+                                <div class="detail-value">{{ currency.id }}</div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-label">Название (рус.)</div>
+                                <div class="detail-value">{{ currency.name_v }}</div>
+                            </div>
+                        </div>
+
+                        <div class="currency-value">
+                            {{ "%.2f"|format(currency.value) if currency.value else 'N/A' }} ₽
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="no-currencies">
+                    <p>Этот пользователь еще не подписан ни на одну валюту.</p>
+                    <p>Чтобы добавить валюту, перейдите в раздел "Курсы валют".</p>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="navigation">
+                <a href="/" class="nav-button">На главную</a>
+                <a href="/users" class="nav-button">К списку пользователей</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

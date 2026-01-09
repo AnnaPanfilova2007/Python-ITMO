@@ -1,0 +1,108 @@
+class UserCurrency:
+    """
+    Класс, представляющий связь между пользователем и валютой.
+
+    Используется для хранения информации о том, какие валюты
+    отслеживает или использует конкретный пользователь.
+
+    Атрибуты:
+        __uid (int): Идентификатор пользователя (User ID)
+        __id (int): Идентификатор связи/отношения
+        __cid (int): Идентификатор валюты (Currency ID)
+    """
+
+    def __init__(self, id: int, uid: int, current_id: int):
+        """
+        Конструктор класса UserCurrency.
+
+        Args:
+            uid (int): Идентификатор пользователя (>= 0)
+            id (int): ID связи (>= 0)
+            current_id (int): Идентификатор валюты (>= 0)
+
+        """
+        self.__uid: int = uid  # Приватный: ID пользователя
+        self.__id: int = id  # ID связи
+        self.__cid: int = current_id  # Приватный: ID валюты
+
+
+
+    @property
+    def uid(self):
+        """
+        Геттер для получения идентификатора пользователя.
+
+        Returns:
+            int: ID пользователя
+        """
+        return self.__uid
+
+    @uid.setter
+    def uid(self, uid: int):
+        """
+        Сеттер для установки идентификатора пользователя.
+
+        Args:
+            uid (int): ID пользователя
+
+        Raises:
+            ValueError: Если uid не является int или меньше 0
+
+        """
+        if type(uid) is int and uid >= 0:
+            self.__uid = uid
+        else:
+            raise ValueError('Ошибка при задании id пользователя')
+
+    @property
+    def id(self):
+        """
+        Геттер для получения неясного идентификатора.
+
+        Returns:
+            int: Неясный идентификатор (возможно ID связи)
+
+        """
+        return self.__id
+
+    @id.setter
+    def id(self, id: int):
+        """
+        Сеттер для установки неясного идентификатора.
+
+        Args:
+            id (int): Новое значение неясного идентификатора
+
+        Raises:
+            ValueError: Если id не является int или меньше 0
+        """
+        if type(id) is int and id >= 0:
+            self.__id = id
+        else:
+            raise ValueError('Ошибка при задании id')
+
+    @property
+    def current_id(self):
+        """
+        Геттер для получения идентификатора валюты.
+
+        Returns:
+            int: ID валюты
+        """
+        return self.__cid
+
+    @current_id.setter
+    def current_id(self, cid: int):
+        """
+        Сеттер для установки идентификатора валюты.
+
+        Args:
+            cid (int): Новый ID валюты
+
+        Raises:
+            ValueError: Если cid не является int или меньше 0
+        """
+        if type(cid) is int and cid >= 0:
+            self.__cid = cid
+        else:
+            raise ValueError('Ошибка при задании id валюты')
